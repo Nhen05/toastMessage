@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+}  
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+}   
+.toast{ 
+ display: flex;
+ align-items: center;
+ background-color: #fff;
+ border-radius: 5px;
+ border-left: 4px solid;
+ padding: 20px 0;
+ box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+ min-width:400px ;
+ max-width: 450px;
+animation: slideInLeft ease 0.3s, fadeout linear 1s 3s forwards;
+}
+@keyframes slideInLeft{
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeout{
+    from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+}
+.toast + .toast{
+    margin-top: 20px;
+}
+
+.toast-body{
+ flex-grow: 1;
+}
+.toast-msg{
+    font-weight: 100;
+    line-height: 1.5
+}
+.toast-icon ,
+.toast-close{
+    padding: 0 16px;
+}
+.toast-icon{
+font-size: 24px;
+}
+.toast-close{
+    float: right;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+
+   
+}
+.toast-close:hover{
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    font-weight: 700;
+}
+.toast-success{
+    border-left-color: #4CAF50;
+}
+.toast-success .toast-icon{
+    color: #4CAF50;
+}
+.toast-warning{
+    border-left-color: #FF9800;
+}
+.toast-warning .toast-icon{
+    color: #FF9800;
+}
+.toast-info{
+    border-left-color: #2196F3;
+}
+.toast-info .toast-icon{
+    color: #2196F3;
+}
+.toast-error{
+    border-left-color: red;
+}
+.toast-error .toast-icon{
+    color: red;
+}
+#show-toast{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 30px 50px;
+
+}
+.btn{
+    padding:20px 20px ;
+    margin: 10px 20px;
+   border-radius: 21px;
+    min-width: 100px;
+    max-width: 200px;
+}
+.btn-sucess{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-error{
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-info{
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-warning{
+    background-color: #FF9800;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
